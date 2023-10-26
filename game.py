@@ -85,7 +85,7 @@ class TicTacToe:
     def play_again(self):
         while True:
             try:
-                choice = int(input("Play again? (0 for yes, 1 for no): "))
+                choice = int(input("Quieres jugar de nuevo? (0 = Si, 1 = No): "))
                 if choice == 0:
                     return True
                 elif choice == 1:
