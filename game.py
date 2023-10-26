@@ -1,6 +1,7 @@
 import random
 import math
 import os
+import time
 
 #X is max = 1
 #O in min = -1
@@ -98,6 +99,7 @@ class TicTacToe:
                 # showing the final view of board
                     print()
                     self.show_board()
+                    time.sleep(3)
 
 class humanPLayer:
     def __init__(self, letter):
