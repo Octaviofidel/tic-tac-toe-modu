@@ -66,17 +66,38 @@ class TicTacToe:
             square = human.human_move(self.board)
             self.board[square] = self.humanPLayer
             if self.checkWinner():
-                break
+                if self.play_again():
+                    self.board = ['-' for _ in range(9)]
+                else:
+                    break
             
             #Bot
             square = bot.machine_move(self.board)
             self.board[square] = self.botPlayer
             if self.checkWinner():
-                break
+                if self.play_again():
+                    self.board = ['-' for _ in range(9)]
+                else:
+                    break
+                os.system("cls")
+                self.show_board()
+                self.show_board()
+    def play_again(self):
+        while True:
+            try:
+                choice = int(input("Play again? (0 for yes, 1 for no): "))
+                if choice == 0:
+                    return True
+                elif choice == 1:
+                    return False
+                else:
+                    print("Error: Invalid choice. Please enter 0 to play again or 1 to exit.")
+            except ValueError:
+                    print("Error: Invalid choice. Please enter 0 to play again or 1 to exit.")
 
-        # showing the final view of board
-        print()
-        self.show_board()
+                # showing the final view of board
+                    print()
+                    self.show_board()
 
 class humanPLayer:
     def __init__(self, letter):
